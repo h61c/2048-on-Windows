@@ -56,12 +56,12 @@ void win()
 void output()
 {
 	//output the matrix
-	for(int y=0;y<4;++y,cout<<'\n'<<'\n')
+	for(int y=0;y<4;++y,cout<<"\n\n\n\n")
 	for(int x=0;x<4;++x) {
 		if (elm[y][x]>0)
 			cout<<pow(2,elm[y][x])<<'\t';
 		else 
-			cout<<0<<'\t';
+			cout<<'.'<<'\t';
 	}
 }
 
@@ -86,22 +86,22 @@ bool MixUp(char direction='w')
 	//return true if mixup is succeed
 	bool success=false;
 	for(int j=0;j<4;++j)
-	for(int i=1;i<4;++i)
-		for (int k=1;k<=i&&elm[i][j]!=0;++k) {
-			if (elm[i][j]==elm[i-k][j]) {
+	for(int i=0;i<4;++i)
+		for (int k=1;k<=4-i&&elm[i][j]!=0;++k) {
+			if (elm[i+k][j]!=0 && elm[i][j]!=elm[i+k][j])
+				break;
+			if (elm[i][j]==elm[i+k][j]) {
 				if (direction!=key)
 				//if the 'direction' is different to keyboard input
 				//break the loop
 					return true;
-				elm[i][j]=0;
-				++elm[i-k][j];
+				elm[i+k][j]=0;
+				++elm[i][j];
 				//mixup succeed
 				Will_Spawn[0]=true;
 				success=true;
 				break;
 			}
-			if (elm[i-k][j]!=0 && elm[i][j]!=elm[i-k][j])
-				break;
 		}
 	return success;
 }
