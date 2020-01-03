@@ -182,6 +182,7 @@ bool MoveRight()
 	return success;
 }
 
+//return true if there is a successful 'P'
 bool NumberMix()
 {
 	//return true if there is a successful 'P'
@@ -192,10 +193,8 @@ bool NumberMix()
 	P4=MixLeft();
 	return P1||P2||P3||P4;
 }
-
 bool NumberMove()
 {
-	//return 
 	bool P1,P2,P3,P4;
 	P1=MoveUp();
 	P2=MoveRight();
