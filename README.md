@@ -1,3 +1,3 @@
-# 2048
+# 2048 Console Version
 #it can run on Windows
-#yep,it is not so good(Console Version).
+# yep,it is not so good
