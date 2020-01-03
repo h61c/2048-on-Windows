@@ -1,2 +1,3 @@
-# 2048-on-Windows
-The first game I made(Console Version).
+# 2048
+it can run on Windows
+yep,it is not so good(Console Version).
